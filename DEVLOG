@@ -1,0 +1,77 @@
+This is the Developer-Logbook for the LFS-build
+
+16/1-26-15:40: Installed a new Debian-based virtual machine on my laptop. I do have another laptop (not here atm),
+where i plan to keep my main build. I have set up a LFS-variable, mounted the partition, set file permissions etc.
+Everything I do hereafter is made by the root-user. Right now i'm downloading all the necessary programs/tools
+and it's taking painstakingly long time. I might consider migrating this to a usb temporalily.
+-----------------------------------------------------------------------------------------------------
+16/1-26-22:17 i have entered chapter 5 where we enter the cross-compile area. I am now really tired so nothing sticks.
+Therefore I will now say goodnight. Tomorrow I will set this up on the other laptop I planned from the beginning,
+it's too sketchy and slow to do it on my main computers vm.
+-----------------------------------------------------------------------------------------------------
+17/1-26-18:15: I set up my old gaming-rig with Debian instead of doing LFS in my vm om the daily-laptop.
+I connect via SSH from my daily-laptop. Therefore i can copy/paste long commands.
+I stumbled upon some trouble with permissions. The main culprit is taking the shortcut to get all the tools
+from my repo instead of doing the "wget"-command. In the end i reversed a few steps, deleted the lfs-user and are now
+getting the necessary tools with "wget". Yesterday that took my computer 40 minutes in the vm. This is already
+way faster than yesterday. My plan is to finish this LFS-build by sunday evening, which is tomorrow :) Wish me luck!
+Update: The Wget took 4 minutes on my old gaming-rig lol.
+-----------------------------------------------------------------------------------------------------
+17/1-26-19:10: First tool binutils is now compiled, and that means I am on my way! That build took 55 seconds! This tells me
+that the rest of the compilating should be relative pain-less. According to the book LFS, GCC should take 3.8 SBU = 2,09 minutes in my case.
+Real time = appr 8-10 mins.
+-----------------------------------------------------------------------------------------------------
+17/1-26-22:41: I've gotten further than planned. I have compiled GCC and Binutils twice with some other Linux-utilities.
+Since I am now going to enter a chroot-environment and are very tired, I am going to save this for tomorrow.
+Goodnight!
+------------------------------------------------------------------------------------------------------
+18/1-26-07:31: Good morning! I have been inside the chroot-environment for about 30 minutes. The first package of many (Gettext)
+is compiling as we speak. So far so good. I've understood that it is easier to break stuff in a chroot-environment so
+I will take my time and be cautionous. 
+------------------------------------------------------------------------------------------------------
+18/1-26-09:13: The LFS just finished critical testing for Glibc and the results are astonoshing:
+      1 FAIL
+   6565 PASS
+    522 UNSUPPORTED
+     16 XFAIL
+      4 XPASS
+This seems promising!
+------------------------------------------------------------------------------------------------------
+18/1-26-13:35: After 2 hours, the biggest compiling step is over and I only got 4 unexpected errors out of over 211k, so I am
+satisfied with this result. Moving on without further errors.
+------------------------------------------------------------------------------------------------------
+18/1-26-17:54: I just shut down the machine because I am so tired. My head feels like gravy, but I got the biggest part done!
+I have compiled and installed the rest of the total appr 100 packages into my LFS-system, and I wouldn't be surprised if I 
+have a nightmare about "tar -xvf <filename>". I have written that command at least 120 times today haha. It feels good though,
+I have made backups (17GB!!) of the LFS-system. I will continue this another day.
+------------------------------------------------------------------------------------------------------
+19/1-26-20:24: Today I only had a few hours to spare with this project. I took 2 steps forward and then two steps back with a
+potentially burned usb-stick :). I actually copied the LFS-system into a usb, which I later mounted through my much more
+powerful current gaming-computer (Ryzen7 16-core). I did all the config-files in chapter 9 and was about to start building
+the kernel. Then I got an error of a missing C-library which I tracked to a broken Glibc-file. BUT I am not so sure about that.
+
+At the same time I was investigating the problem, the terminal commands got sluggish and stopped answering. An unmount command did not work, so i pulled the usb out (I had no choice). When I plugged it into my other computer It wouldn't even mount. BUT fear not fellow 
+peasants! Ofcourse I have a backup on my laptop (and my old gaming-rig). The only thing lost is the configs in chapter 9, but that is
+only text and can be redone with no problem. I will continue this tommorow. Vincent out!
+------------------------------------------------------------------------------------------------------
+20/1-26-18:35: IT'S ALIVE! My very own Linux-distro is up and running. I had some problems to get it to load the kernel at first, but then
+I used that vm I originally was starting the build in, and had some problems there as well but with a fstab-file. The point is, my system is working in the very basic matter and it makes me so proud of myself. 10/10 Would (will) do it again! Vincent out!
+----------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+31/1-26-15:53: I have a huge update. My old system I built above, forget about it. It's gone bc my backup-files got corrupted due to a fault USB-stick. BUT What kind of nerd would I be if I stopped there, I thought to myself. So I built another system =D
+So the new system is named "Tenhauser" after the famous scene in Blade-Runner -82 where Rutger Hauers character delivers his iconic speech before passing away. I am going to quickly summarize the build of the second system.
+------------------------------------------------------------------------------------------------------------
+Day 1: Got an error after something went wrong in the first compilation of the toolchain, scratched and started over again.
+Day 2: Everything works and I finished a few packages into chapter 8 (about 15/84 packages compiled at that point).
+Day 3: Finished with all the compiling in chapter 8 which only that took the whole day. Then I started to compile the kernel. 
+Day 4-7: A lot of trial n errors with the kernel because of compability issues with different systems. 
+I just trial and errord my way thorugh with the Fstab, Grub and boot stuff which can be a complete nightmare.
+I finally got the system to start as a dualboot on my daily-driver-laptop AND also the older HP. 
+------------------------------------------------------------------------------------------------------------
+What did I learn and what's next?
+
+I learned to make sure that my backups are properly secured so I don't run into the corrupted-files problem again. I think I got like 4 different backups from different build-stages from this project. 
+
+What's next is not much atm. I do plan to build BLFS with this system but not right now as I have more important school-stuff to attend to. But if you stay tuned you might just see that I run my system from a KDE-plasma desktop someday!
+------------------------------------------------------------------------------------------------------------
