@@ -11,7 +11,7 @@ it's full glory!
 
 ***You need to have Docker installed***
 
-Run this command: docker run -rm -it <your docker_username>/lfs-tenhauser:latest /bin/bash
+Run this command: docker run -rm -it "your docker_username"/lfs-tenhauser:latest /bin/bash
 
 the -rm command erases the cachefiles so this won't litter your OS.
 ------------------------------------------------
