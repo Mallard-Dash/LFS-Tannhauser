@@ -1,4 +1,4 @@
-# LFS-Tenhauser
+# LFS-Tannhauser
 
 This is my second ever Linux From Scratch-build. It has the systemd-base and are really basic.
 
